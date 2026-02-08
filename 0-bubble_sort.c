@@ -2,23 +2,20 @@
 
 /**
  * bubble_sort - Sorts an array of integers in ascending order
- *               using the Bubble sort algorithm
- * @array: Array of integers
- * @size: Size of the array
+ * @array: The array to sort
+ * @size: Number of elements in @array
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
-	int temp;
-	int swapped;
+	int i, j, swapped, temp;
 
 	if (!array || size < 2)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < (int)size - 1; i++)
 	{
 		swapped = 0;
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 0; j < (int)size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
@@ -29,8 +26,7 @@ void bubble_sort(int *array, size_t size)
 				print_array(array, size);
 			}
 		}
-		if (swapped == 0)
+		if (!swapped)
 			break;
 	}
 }
-
